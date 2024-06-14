@@ -24,8 +24,8 @@ export default async function NewsBySlug({ params }: NewsBySlugProps) {
               <p className="text-gray-700 dark:text-gray-400 text-base mb-4">
                 { aNew.description }
               </p>
-              {aNew.categories.map((item) => (
-                <div className="flex items-center justify-between mb-4">
+              {aNew.categories.map((item, index) => (
+                <div key={index} className="flex items-center justify-between mb-4">
                     <Badge>{ item.name }</Badge>
                 </div>
               ))}
