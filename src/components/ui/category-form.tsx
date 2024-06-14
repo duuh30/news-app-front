@@ -22,9 +22,10 @@ export default function CategoryForm() {
     });
 
     const handleCategorySubmit = async (data: ValidationSchema) => {
-        await fetch(`${process.env.NEXT_PUBLIC_API_URL}categories`, {
+        await fetch(`/api/create-category`, {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             method: 'POST',
             body: JSON.stringify({

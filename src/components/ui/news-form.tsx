@@ -29,16 +29,16 @@ export default function NewsForm({ categories }: NewFormProps) {
     });
 
     const handleNewsSubmit = async (data: ValidationSchema) => {
-        await fetch(`${process.env.NEXT_PUBLIC_API_URL}news`, {
+        await fetch(`/api/create-news`, {
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
+                'Accept': 'application/json'
             },
             method: 'POST',
             body: JSON.stringify({
                 title: data.name,
                 description: data.description,
-                categories: selectedCategories,
+                categories: selectedCategories
             })
         });
 
